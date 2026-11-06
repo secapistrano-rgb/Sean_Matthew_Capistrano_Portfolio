@@ -6,6 +6,10 @@ const port = process.env.PORT || 3000;
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.listen(port, () => {
-  console.log(`Portfolio running at http://localhost:${port}`);
-});
+if (require.main === module) {
+  app.listen(port, () => {
+    console.log(`Portfolio running at http://localhost:${port}`);
+  });
+}
+
+module.exports = app;
