@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" fill="none">
+  <rect width="1200" height="700" rx="16" fill="#0D100F"/>
+  <rect width="1200" height="40" rx="16" fill="#202721"/>
+  <path d="M0 24h1200v16H0z" fill="#202721"/>
+  <g fill="#72816E"><circle cx="24" cy="20" r="5"/><circle cx="42" cy="20" r="5"/><circle cx="60" cy="20" r="5"/></g>
+  <text x="600" y="25" text-anchor="middle" fill="#A1AAA1" font-family="Arial,sans-serif" font-size="12">sean-matthew-capistrano.vercel.app</text>
+  <path d="M0 117h1200" stroke="#2B332C"/>
+  <g font-family="Arial,sans-serif">
+    <text x="67" y="91" fill="#EDF1E9" font-size="29" font-weight="700">SC<tspan fill="#B5ED7B">.</tspan></text>
+    <g fill="#A1AAA1" font-size="12"><text x="465" y="88">Work</text><text x="535" y="88">About</text><text x="607" y="88">Services</text><text x="697" y="88">Tech stack</text><text x="795" y="88">Experience</text></g>
+    <rect x="1017" y="65" width="112" height="35" rx="6" fill="#B5ED7B"/><text x="1073" y="87" text-anchor="middle" fill="#15210E" font-size="12" font-weight="700">Hire me</text>
+    <text x="68" y="215" fill="#A1AAA1" font-size="11" letter-spacing="2">HELLO, I’M SEAN MATTHEW</text>
+    <text x="65" y="298" fill="#EDF1E9" font-size="61" font-weight="700" letter-spacing="-3">Thoughtful code.</text>
+    <text x="65" y="371" fill="#B5ED7B" font-size="61" font-weight="700" letter-spacing="-3">Useful software.</text>
+    <g fill="#A1AAA1" font-size="15"><text x="68" y="421">An Information Technology graduate building reliable</text><text x="68" y="447">web and mobile applications, with hands-on experience</text><text x="68" y="473">in software testing, databases, and IT support.</text></g>
+    <rect x="68" y="507" width="158" height="44" rx="6" fill="#B5ED7B"/><text x="147" y="534" text-anchor="middle" fill="#15210E" font-size="12" font-weight="700">Explore my work</text>
+    <rect x="240" y="507" width="164" height="44" rx="6" stroke="#394334"/><text x="322" y="534" text-anchor="middle" fill="#EDF1E9" font-size="12">Download resume</text>
+    <text x="68" y="590" fill="#A1AAA1" font-size="11">Baao, Camarines Sur, Philippines</text>
+    <g transform="translate(805 171) rotate(5 140 0)">
+      <path d="M128 0h24v85h-24z" fill="#B5ED7B"/>
+      <rect y="80" width="280" height="379" rx="12" fill="#E5E9DF"/>
+      <rect x="10" y="90" width="260" height="327" rx="5" fill="#1D2C22"/>
+      <circle cx="140" cy="205" r="66" fill="#314C34"/>
+      <text x="140" y="224" text-anchor="middle" fill="#B5ED7B" font-size="54" font-weight="700">SC.</text>
+      <text x="26" y="362" fill="#EDF1E9" font-size="13" font-weight="700">Sean Matthew C. Capistrano</text>
+      <text x="26" y="386" fill="#A1AAA1" font-size="10">Full-stack developer &amp; IT support</text>
+      <text x="16" y="442" fill="#42503C" font-size="9" letter-spacing="2">DEVELOPER ID</text>
+      <rect x="125" y="69" width="30" height="24" rx="5" fill="#A6AEA2"/>
+      <rect x="-17" y="112" width="48" height="39" rx="8" fill="#B5ED7B" stroke="#0D100F" stroke-width="4"/><text x="7" y="137" text-anchor="middle" fill="#15210E" font-size="18">&lt;/&gt;</text>
+    </g>
+    <rect y="649" width="1200" height="51" fill="#B5ED7B"/>
+    <g fill="#15210E" font-size="13" font-weight="700"><text x="90" y="680">React &amp; React Native</text><text x="430" y="680">PHP &amp; CodeIgniter 4</text><text x="800" y="680">REST APIs &amp; databases</text></g>
+  </g>
+</svg>

@@ -55,6 +55,20 @@ window.matchMedia('(min-width: 761px)').addEventListener('change', (event) => {
 });
 
 const projectDetails = {
+  'portfolio': {
+    kicker: 'Personal project · Web development',
+    title: 'Personal Portfolio Website',
+    description: 'A personal website created to present my work, technical background, and contact information to potential employers and collaborators. The portfolio uses HTML, CSS, and vanilla JavaScript for the interface, with Node.js and Express serving the site and its local assets. The design brings together project case studies, technology badges, education, experience, and a downloadable PDF resume in a responsive layout.',
+    period: 'November 2026 · Ongoing improvements',
+    features: ['Responsive desktop and mobile layouts with a mobile navigation menu.', 'Light and dark themes with a saved preference.', 'Project dialogs covering features, contributions, timelines, and technology stacks.', 'A skippable welcome, scroll reveals, typing headlines, and a hanging ID card with cursor tracking.', 'Resume download, social profiles, and direct contact links.', 'Reduced-motion support and keyboard focus indicators.'],
+    contributions: ['Built and refined the page layout, typography, and responsive CSS.', 'Implemented JavaScript interactions for themes, navigation, project dialogs, and animations.', 'Organized project information, resume details, and local technology icons.', 'Configured the Express server and published the website with source code on GitHub.'],
+    outcome: 'Published as a live portfolio showcasing my projects and professional background, with a downloadable resume and direct ways to get in touch.',
+    role: 'Web developer',
+    stack: 'HTML · CSS · JavaScript · Node.js · Express.js · GitHub',
+    image: '/assets/portfolio-preview.svg',
+    alt: 'Illustrated preview of the portfolio website’s introduction and hanging developer ID card',
+    links: [{ label: 'Live website', url: 'https://sean-matthew-capistrano.vercel.app' }, { label: 'Source code', url: 'https://github.com/secapistrano-rgb/Sean_Matthew_Capistrano_Portfolio' }]
+  },
   'lost-found': {
     kicker: 'Capstone · Full-stack development',
     title: 'CSPC Lost & Found Management System',
@@ -66,7 +80,8 @@ const projectDetails = {
     role: 'Full-stack developer',
     stack: 'React · React Native · Node.js · PHP · CodeIgniter 4 · MySQL · Firebase · REST APIs · Google Cloud · GitHub',
     image: '/assets/cspc-lost-found-dashboard.jpg',
-    alt: 'CSPC Lost and Found web dashboard'
+    alt: 'CSPC Lost and Found web dashboard',
+    links: [{ label: 'Source code', url: 'https://github.com/secapistrano-rgb/lost-and-found-web-cspc' }]
   },
   'job-operations': {
     kicker: 'Workflow · Web development',
@@ -79,7 +94,8 @@ const projectDetails = {
     role: 'Programmer intern',
     stack: 'HTML · CSS · JavaScript · PHP · MySQL · Git',
     image: '/assets/job-operations.webp',
-    alt: 'Job Operations Central Management System sign-in screen'
+    alt: 'Job Operations Central Management System sign-in screen',
+    links: [{ label: 'Source code', url: 'https://github.com/kebuquid/ictu_job_ops_v2' }]
   },
   'lost-found-dashboard': {
     kicker: 'Capstone · Web dashboard',
@@ -92,7 +108,8 @@ const projectDetails = {
     role: 'Full-stack developer',
     stack: 'PHP · CodeIgniter4 · MySQL · REST API · Google Cloud',
     image: '/assets/cspc-lost-found-dashboard.jpg',
-    alt: 'CSPC Lost and Found web dashboard'
+    alt: 'CSPC Lost and Found web dashboard',
+    links: [{ label: 'Source code', url: 'https://github.com/secapistrano-rgb/lost-and-found-web-cspc' }]
   },
   'lost-found-mobile': {
     kicker: 'Capstone · Mobile experience',
@@ -105,7 +122,8 @@ const projectDetails = {
     role: 'Full-stack developer',
     stack: 'React Native · JavaScript · Node.js · REST API · MySQL · Google Cloud · GitHub',
     image: '/assets/cspc-lost-found-mobile.jpg',
-    alt: 'CSPC Lost and Found mobile item list'
+    alt: 'CSPC Lost and Found mobile item list',
+    links: [{ label: 'Source code', url: 'https://github.com/secapistrano-rgb/lost-and-found-app-cspc' }]
   }
 };
 
@@ -120,13 +138,14 @@ const modalPeriod = document.querySelector('#modal-period');
 const modalFeatures = document.querySelector('#modal-features');
 const modalContributions = document.querySelector('#modal-contributions');
 const modalOutcome = document.querySelector('#modal-outcome');
+const modalProjectLinks = document.querySelector('#modal-project-links');
 
 const projectTechIcons = new Map([
   ['React', 'react'], ['React Native', 'react'], ['Node.js', 'nodejs'],
   ['PHP', 'php'], ['CodeIgniter 4', 'codeigniter'], ['CodeIgniter4', 'codeigniter'],
   ['MySQL', 'mysql'], ['Firebase', 'firebase'], ['REST APIs', 'api'], ['REST API', 'api'],
   ['Google Cloud', 'googlecloud'], ['Git', 'git'], ['GitHub', 'github'], ['HTML', 'html'],
-  ['CSS', 'css'], ['JavaScript', 'javascript']
+  ['CSS', 'css'], ['JavaScript', 'javascript'], ['Express.js', 'express']
 ]);
 
 const renderProjectStack = (stack) => {
@@ -138,7 +157,7 @@ const renderProjectStack = (stack) => {
       const image = document.createElement('img');
       image.src = `/assets/tech/${icon}.svg`;
       image.alt = '';
-      if (icon === 'github') image.className = 'tech-logo-monochrome';
+      if (icon === 'github' || icon === 'express') image.className = 'tech-logo-monochrome';
       image.width = 18;
       image.height = 18;
       badge.append(image);
@@ -170,6 +189,16 @@ const openProjectModal = (projectKey) => {
   renderProjectList(modalFeatures, project.features);
   renderProjectList(modalContributions, project.contributions);
   modalOutcome.textContent = project.outcome;
+  modalProjectLinks.replaceChildren(...(project.links || []).map(({ label, url }) => {
+    const link = document.createElement('a');
+    link.className = 'project-details-link';
+    link.textContent = label;
+    link.href = url;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    return link;
+  }));
+  modalProjectLinks.hidden = !project.links?.length;
   projectModal.showModal();
   projectModal.scrollTop = 0;
 };
@@ -297,7 +326,7 @@ const startTyping = (heading, state) => {
   state.characters.forEach((letter) => letter.classList.remove('is-typed'));
   heading.classList.add('is-typing');
   let index = 0;
-  const characterDelay = Math.min(60, 1600 / Math.max(1, state.characters.length));
+  const characterDelay = Math.min(25, 800 / Math.max(1, state.characters.length));
   const typeNextCharacter = () => {
     if (index > 0) state.characters[index - 1].classList.remove('is-current');
     if (index === state.characters.length) {
@@ -306,9 +335,9 @@ const startTyping = (heading, state) => {
     }
     state.characters[index].classList.add('is-typed', 'is-current');
     index += 1;
-    state.timer = window.setTimeout(typeNextCharacter, index === state.characters.length ? 1400 : characterDelay);
+    state.timer = window.setTimeout(typeNextCharacter, index === state.characters.length ? 600 : characterDelay);
   };
-  state.timer = window.setTimeout(typeNextCharacter, 220);
+  state.timer = window.setTimeout(typeNextCharacter, 100);
 };
 
 const configureTyping = () => {

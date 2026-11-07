@@ -58,6 +58,7 @@ package-lock.json  Locked dependency versions
 | CSPC Lost & Found Admin | Web management experience for lost-item reporting, tracking, and AI-assisted matching. |
 | Job Operations | A centralized web application for task scheduling, records, and workflow automation. |
 | Lost & Found App | The student-facing React Native component of the CSPC Lost & Found capstone. |
+| Personal Portfolio Website | This responsive website, featuring project case studies, theme switching, animated interactions, and a downloadable resume. |
 
 ## Customize
 
