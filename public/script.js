@@ -121,11 +121,42 @@ const projectDetails = {
     outcome: 'The student-facing app within the CSPC capstone, which received a project grade of 1.25.',
     role: 'Full-stack developer',
     stack: 'React Native · JavaScript · Node.js · REST API · MySQL · Google Cloud · GitHub',
-    image: '/assets/cspc-lost-found-mobile.jpg',
+    image: '/assets/walkthrough/all/app/02-home.png?v=fed26bd7',
     alt: 'CSPC Lost and Found mobile item list',
     links: [{ label: 'Source code', url: 'https://github.com/secapistrano-rgb/lost-and-found-app-cspc' }]
   }
 };
+
+// Engineering summaries grounded in project materials, rather than invented personal anecdotes.
+const buildStories = {
+  'lost-found': {
+    note: 'Based on the CSPC walkthrough and claim-management controller.',
+    challenge: 'A visually similar item is a useful lead, but a match score alone cannot establish ownership. Approval also needs to stay distinct from the actual return.',
+    solution: 'The web workflow separates item records, match review, and ownership claims. The claim controller keeps items active after approval, then marks the lost record claimed and the found record returned when the case is resolved.',
+    lesson: 'Model the human decision and the physical handover as separate states. Automated suggestions help narrow a search; evidence and review determine the next action.'
+  },
+  'job-operations': {
+    note: 'Based on the repository overview and documented internship contributions.',
+    challenge: 'Job requests need a central record so the interface and backend refer to the same work instead of treating each screen as an isolated task.',
+    solution: 'The project uses CodeIgniter 4 with MySQL to handle ICTU job-request tickets. Documented contributions include frontend and backend development, testing, debugging, organized records, and collaboration through Git.',
+    lesson: 'For an operations tool, useful structure comes from clear records and predictable workflows. Check the interface and data handling together when changing a feature.'
+  },
+  'lost-found-mobile': {
+    note: 'Based on the mobile reporting screen and its shared API flow.',
+    challenge: 'A mobile report needs to turn photos, categories, locations, and identifying details into a consistent record for the backend.',
+    solution: 'The reporting screen validates input, checks similar items, tracks loading states, and constructs a structured item payload. It passes image references in the array format expected by the backend before calling the item-creation service.',
+    lesson: 'Keep the mobile-to-API contract explicit. Input validation and visible loading or error states matter just as much as the finished screen.'
+  },
+  'portfolio': {
+    note: 'Based on this portfolio’s interaction and responsive-layout code.',
+    challenge: 'Typing effects, scroll reveals, and a moving ID card need to coexist with readable text, small screens, and reduced-motion preferences.',
+    solution: 'Intersection observers trigger reveals, each headline keeps its accessible name, and reduced-motion settings bypass the animation. Mouse-only ID tracking is separated from the falling-card wrapper, while the mobile caption sits below the photo.',
+    lesson: 'Build motion as an enhancement to a readable page. Separate animation responsibilities so responsive fixes and accessibility preferences remain manageable.'
+  }
+};
+buildStories['lost-found-dashboard'] = buildStories['lost-found'];
+Object.entries(buildStories).forEach(([key, story]) => { projectDetails[key].buildStory = story; });
+['lost-found', 'lost-found-dashboard', 'lost-found-mobile'].forEach((key) => { projectDetails[key].walkthrough = true; });
 
 const projectModal = document.querySelector('#project-modal');
 const modalImage = document.querySelector('#modal-image');
@@ -139,6 +170,21 @@ const modalFeatures = document.querySelector('#modal-features');
 const modalContributions = document.querySelector('#modal-contributions');
 const modalOutcome = document.querySelector('#modal-outcome');
 const modalProjectLinks = document.querySelector('#modal-project-links');
+const modalStory = document.querySelector('#modal-story');
+const modalStoryNote = document.querySelector('#modal-story-note');
+
+const renderBuildStory = (story) => {
+  modalStoryNote.textContent = story.note;
+  modalStory.replaceChildren(...[['Challenge', story.challenge], ['Solution', story.solution], ['Lesson', story.lesson]].map(([label, description]) => {
+    const block = document.createElement('div');
+    const term = document.createElement('dt');
+    term.textContent = label;
+    const detail = document.createElement('dd');
+    detail.textContent = description;
+    block.append(term, detail);
+    return block;
+  }));
+};
 
 const projectTechIcons = new Map([
   ['React', 'react'], ['React Native', 'react'], ['Node.js', 'nodejs'],
@@ -189,6 +235,7 @@ const openProjectModal = (projectKey) => {
   renderProjectList(modalFeatures, project.features);
   renderProjectList(modalContributions, project.contributions);
   modalOutcome.textContent = project.outcome;
+  renderBuildStory(project.buildStory);
   modalProjectLinks.replaceChildren(...(project.links || []).map(({ label, url }) => {
     const link = document.createElement('a');
     link.className = 'project-details-link';
@@ -198,7 +245,16 @@ const openProjectModal = (projectKey) => {
     link.rel = 'noopener noreferrer';
     return link;
   }));
-  modalProjectLinks.hidden = !project.links?.length;
+  if (project.walkthrough) {
+    const walkthroughLink = document.createElement('a');
+    walkthroughLink.className = 'project-details-link';
+    walkthroughLink.textContent = 'Try the walkthrough';
+    walkthroughLink.href = '#walkthrough';
+    walkthroughLink.dataset.demoViewLink = project === projectDetails['lost-found-mobile'] ? 'app' : 'web';
+    walkthroughLink.addEventListener('click', () => projectModal.close());
+    modalProjectLinks.append(walkthroughLink);
+  }
+  modalProjectLinks.hidden = !project.links?.length && !project.walkthrough;
   projectModal.showModal();
   projectModal.scrollTop = 0;
 };

@@ -12,6 +12,10 @@ Built with HTML, CSS, vanilla JavaScript, and an Express server.
 - An animated hanging ID card with cursor-follow effects.
 - A continuously scrolling technology marquee.
 - Project detail dialogs with features, contributions, timelines, and technology logos.
+- A sample-data Lost & Found walkthrough: submit a report, compare matches, review ownership evidence, and confirm a handover.
+- Switch between Web admin and Mobile app previews without losing walkthrough progress. The mobile project’s walkthrough link opens its app view directly.
+- A complete screen browser with 11 web previews (including the item quick-preview) and all 12 app previews, captions, direct screen selection, and previous/next navigation.
+- “Behind the build” stories for each project, covering an engineering challenge, its solution, and a lesson.
 - Education, certifications, work experience, and technical skills.
 - A downloadable PDF resume and contact links.
 - Keyboard focus indicators and reduced-motion support.
@@ -44,8 +48,12 @@ public/
   index.html       Page content and layout
   styles.css       Themes, responsive styling, and animations
   script.js        Navigation, project dialogs, and interactions
+  walkthrough.js   Browser-only sample scenario and workflow state
+  walkthrough-gallery.js  Full screen browser and navigation
+  walkthrough-catalog.js  Screen titles, captions, and asset paths
   assets/          Project screenshots, portrait, and resume
     tech/          Technology icons and attribution
+    walkthrough/   Fictional admin previews and source notes
 server.js          Express server and static file handling
 package.json       Dependencies and start command
 package-lock.json  Locked dependency versions
@@ -64,6 +72,8 @@ package-lock.json  Locked dependency versions
 
 - Edit `public/index.html` to update the introduction, project cards, skills, experience, and contact information.
 - Edit `projectDetails` in `public/script.js` to update the project dialog descriptions, technology stacks, and contributions.
+- Edit `buildStories` in `public/script.js` to update each project’s challenge, solution, and lesson. Keep these grounded in the project’s actual implementation.
+- Update the walkthrough markup in `public/index.html` and its state transitions in `public/walkthrough.js` together. The demo uses fictional records, fixed match scores, and in-memory state; it does not connect to the CSPC backend.
 - Adjust the CSS variables in `public/styles.css` to change theme colors and fonts.
 - Replace images in `public/assets/` and update their references as needed.
 - Replace `public/assets/sean-matthew-capistrano-resume.pdf` to update the downloadable resume.
@@ -73,6 +83,9 @@ package-lock.json  Locked dependency versions
 ```bash
 node --check server.js
 node --check public/script.js
+node --input-type=module --check < public/walkthrough.js
+node --input-type=module --check < public/walkthrough-gallery.js
+node --input-type=module --check < public/walkthrough-catalog.js
 git diff --check
 ```
 
@@ -81,6 +94,8 @@ These commands check JavaScript syntax and whitespace. Preview the site in a bro
 ## Asset attribution
 
 Technology icon sources and licensing details are recorded in [`public/assets/tech/SOURCES.md`](public/assets/tech/SOURCES.md) and [`DEVICON-LICENSE`](public/assets/tech/DEVICON-LICENSE).
+
+Walkthrough screenshot origins and the distinction between interface previews and the interactive simulation are documented in [`public/assets/walkthrough/SOURCES.md`](public/assets/walkthrough/SOURCES.md).
 
 ## Contact
 
