@@ -115,63 +115,109 @@
         <div class="section-heading reveal"><p class="eyebrow">/ Explore the workflow</p><h2 id="walkthrough-title">One lost item.<br /><em>Every step explained.</em></h2><p class="section-note">Try a fictional blue-backpack case, from the first report to the final handover.</p></div>
         <div class="demo-shell" id="lost-found-demo">
           <div class="demo-toolbar"><span class="demo-label"><span class="status-dot" aria-hidden="true"></span> Interactive demo · Sample data</span><button class="demo-reset" id="demo-reset" type="button">Start over</button></div>
-          <div class="demo-view-switch" role="group" aria-label="Walkthrough preview"><button type="button" data-demo-view="web" aria-pressed="true">Web admin</button><button type="button" data-demo-view="app" aria-pressed="false">Mobile app</button></div>
-          <p class="demo-intro">Follow the same sample case through the web admin or mobile app screens. The controls simulate reporting, staff review, and handover in your browser; they do not submit real reports or run AI matching.</p>
-          <p class="demo-preview-note" id="demo-preview-note">Web admin views rendered with fictional records and a simulated admin session.</p>
-          <ol class="demo-steps" aria-label="Walkthrough steps">
-            <li><button type="button" data-demo-step="0" aria-current="step"><span>01</span> Report</button></li>
-            <li><button type="button" data-demo-step="1" disabled><span>02</span> Match</button></li>
-            <li><button type="button" data-demo-step="2" disabled><span>03</span> Claim</button></li>
-            <li><button type="button" data-demo-step="3" disabled><span>04</span> Handover</button></li>
+          <p class="demo-preview-note">User’s Guide · Student app → Administrator website</p>
+          <p class="demo-intro">Follow Appendix F of the User’s Guide: sign in, browse, report a lost item, review a match, and submit proof of ownership in the app. Then switch to staff on CSPC Web to manage the report, review the claim, and record collection. All accounts, reports, and actions here use fictional sample data.</p>
+          <p class="demo-preview-note" id="demo-preview-note">CSPC App · Student sign-in. Source-based browser preview with sample data.</p>
+          <ol class="demo-steps" aria-label="User guide demo steps">
+            <li><button type="button" data-demo-step="0" aria-current="step"><span>01</span> App sign-in</button></li>
+            <li><button type="button" data-demo-step="1" disabled><span>02</span> App dashboard</button></li>
+            <li><button type="button" data-demo-step="2" disabled><span>03</span> Report item</button></li>
+            <li><button type="button" data-demo-step="3" disabled><span>04</span> App matches</button></li>
+            <li><button type="button" data-demo-step="4" disabled><span>05</span> Submit claim</button></li>
+            <li><button type="button" data-demo-step="5" disabled><span>06</span> Staff sign-in</button></li>
+            <li><button type="button" data-demo-step="6" disabled><span>07</span> Manage report</button></li>
+            <li><button type="button" data-demo-step="7" disabled><span>08</span> Review claim</button></li>
+            <li><button type="button" data-demo-step="8" disabled><span>09</span> Collection</button></li>
           </ol>
           <div class="demo-grid">
             <figure class="demo-preview">
-              <a id="demo-full-image" href="/assets/walkthrough/items.png?v=df1e15f3" target="_blank" rel="noopener noreferrer" aria-label="Open the current admin preview at full size"><img id="demo-screen" src="/assets/walkthrough/items.png?v=df1e15f3" alt="Updated Item Management preview showing sample reports, filters, and item previews" width="1600" height="1250" loading="lazy" decoding="async" /></a>
-              <figcaption><strong id="demo-screen-label">Inside the project: Item Management</strong><span id="demo-screen-caption">Admin interface preview · Fictional records · Click to enlarge</span></figcaption>
+              <div class="demo-case-preview" id="demo-claim-preview" hidden aria-labelledby="demo-case-preview-title">
+                <p class="demo-case-workspace">CSPC WEB · STAFF MANAGEMENT</p>
+                <h4 id="demo-case-preview-title">Claims Management</h4>
+                <p class="demo-case-help">Selected claim · CASE DEMO-001</p>
+                <div class="demo-case-item"><img src="/assets/walkthrough/case/backpack.svg" width="64" height="64" alt="Blue backpack sample illustration" /><div><strong>Blue backpack</strong><span>Lost report ↔ Found backpack</span><span>DEMO-MATCH-001 · Demo Student</span></div></div>
+                <div class="demo-case-status" id="demo-preview-claim-status" role="status" aria-live="polite">Pending Review</div>
+                <dl class="demo-evidence"><div><dt>Claimant</dt><dd>Demo Student</dd></div><div><dt>Claimed item</dt><dd>Blue backpack · Bags · Library</dd></div><div><dt>Ownership evidence</dt><dd id="demo-preview-proof"></dd></div><div><dt>Collection</dt><dd id="demo-preview-collection">Not approved for collection yet</dd></div></dl>
+                <p class="demo-field-note">Interactive sample record for the backpack case. Its status follows your actions in this demo.</p>
+              </div>
+              <a id="demo-full-image" href="/assets/walkthrough/all/app/01-login.png" target="_blank" rel="noopener noreferrer" aria-label="Open the current walkthrough preview at full size"><img id="demo-screen" src="/assets/walkthrough/all/app/01-login.png" alt="CSPC app campus sign-in browser preview" width="645" height="1410" loading="lazy" decoding="async" /></a>
+              <figcaption><strong id="demo-screen-label">CSPC App: Campus sign-in</strong><span id="demo-screen-caption">Source-based browser preview · Demo data · Click to enlarge</span></figcaption>
             </figure>
             <div class="demo-interaction">
               <div class="demo-case-meta"><span>CASE DEMO-001</span><span class="demo-status" id="demo-status">Ready to report</span></div>
-              <section class="demo-panel" data-demo-panel="0" aria-labelledby="demo-report-title">
-                <h3 id="demo-report-title" tabindex="-1">Report a missing backpack</h3>
-                <p>Play the role of Demo Student. Start with a description that helps staff distinguish this bag from similar items.</p>
+              <section class="demo-panel" data-demo-panel="0" aria-labelledby="demo-signin-title">
+                <h3 id="demo-signin-title" tabindex="-1">Sign in to the CSPC app</h3>
+                <p>The guide starts with Sign in with Google and choosing a CSPC campus account. Continue as a fictional student to explore the flow.</p>
+                <div class="demo-report-recap"><span>Sample account</span><p>Demo Student · CSPC campus account</p></div>
+                <button class="button-primary" id="demo-student-signin" type="button" data-demo-submit disabled>Simulate Google sign-in</button>
+                <p class="demo-field-note">Demo only: no Google account, password, or campus sign-in is requested.</p>
+              </section>
+              <section class="demo-panel" data-demo-panel="1" aria-labelledby="demo-home-title" hidden>
+                <h3 id="demo-home-title" tabindex="-1">Browse the app dashboard</h3>
+                <p>Use All, Lost, or Found to browse reports. The guide’s plus button opens Report Item.</p>
+                <div class="demo-actions" role="group" aria-label="Sample item filters"><button class="demo-reset" type="button" data-demo-filter="all" aria-pressed="true">All</button><button class="demo-reset" type="button" data-demo-filter="lost" aria-pressed="false">Lost</button><button class="demo-reset" type="button" data-demo-filter="found" aria-pressed="false">Found</button></div>
+                <ul class="demo-dashboard-items"><li data-demo-item-type="lost">Blue backpack · Lost · Library</li><li data-demo-item-type="found">Black wallet · Found · Student Center</li></ul>
+                <button class="button-primary" id="demo-open-report" type="button">＋ Report item</button>
+              </section>
+              <section class="demo-panel" data-demo-panel="2" aria-labelledby="demo-report-title" hidden>
+                <h3 id="demo-report-title" tabindex="-1">Report a lost item in the app</h3>
+                <p>Select Lost Item, add an image, review the suggested description, detect the location, choose the date, and submit.</p>
                 <form id="demo-report-form">
-                  <label for="demo-item">Item</label><input id="demo-item" value="Blue backpack" readonly />
-                  <label for="demo-location">Last seen</label><select id="demo-location" name="location"><option>Library</option><option>Library entrance</option></select>
-                  <label for="demo-description">Identifying details</label><textarea id="demo-description" name="description" rows="3" minlength="10" maxlength="240" required>Blue backpack with a silver keyring inside the front pocket.</textarea>
-                  <p class="demo-field-note">Use fictional details only. This sample report stays in memory and resets on reload.</p>
+                  <label for="demo-item">Lost Item · Title</label><input id="demo-item" value="Blue backpack" readonly />
+                  <span class="demo-field-label">Item photo</span><div class="demo-actions"><button class="button-secondary" type="button" data-demo-photo="camera">Take Photo (sample)</button><button class="button-secondary" type="button" data-demo-photo="gallery">Pick Image (sample)</button></div><p class="demo-field-note" id="demo-photo-status">Select a sample photo to continue.</p>
+                  <label for="demo-description">Review the sample suggested description</label><textarea id="demo-description" name="description" rows="3" minlength="10" maxlength="240" required>Blue backpack with a silver keyring inside the front pocket.</textarea>
+                  <p class="demo-field-note">Edit the sample description as needed. Live image analysis is simulated.</p>
+                  <button class="button-secondary" type="button" id="demo-detect-location">Detect sample location</button><label for="demo-location">Detected location</label><input id="demo-location" value="" readonly placeholder="Use Detect sample location" />
+                  <label for="demo-date">Date lost</label><input id="demo-date" type="date" value="2026-11-11" required />
+                  <p class="demo-field-note">The sample photo and location are fictional; no camera, file, or GPS access is used.</p>
                   <button class="button-primary" type="submit" data-demo-submit disabled>Submit sample report</button>
                 </form>
+                <details class="demo-guide-details"><summary>Reporting a found item instead?</summary><p>The guide uses Found Item, asks you to read the turn-in reminder, then add a photo, review the title and description, detect the location, select the date, and submit. This case follows a student’s lost backpack.</p></details>
               </section>
-              <section class="demo-panel" data-demo-panel="1" aria-labelledby="demo-match-title" hidden>
-                <h3 id="demo-match-title" tabindex="-1">Review possible matches</h3>
-                <p>Select the found item that best fits the report. These scores are fixed demo values, not live AI results.</p>
-                <div class="demo-report-recap"><span>Your sample report</span><p id="demo-report-recap"></p></div>
-                <div class="demo-candidates" aria-label="Sample found items">
-                  <button class="demo-candidate" type="button" data-demo-match="backpack" aria-pressed="false"><strong>Blue backpack</strong><span>Bags · Library entrance</span><span class="demo-score">94% demo score</span></button>
-                  <button class="demo-candidate" type="button" data-demo-match="wallet" aria-pressed="false"><strong>Black wallet</strong><span>Personal items · Student Center</span><span class="demo-score">18% demo score</span></button>
-                </div>
-                <p class="demo-field-note">A high match score is a review aid, not proof of ownership.</p>
-                <div class="demo-actions"><button class="button-secondary" type="button" data-demo-back>Back</button><button class="button-primary" type="button" id="demo-review-match" disabled>Review selected match</button></div>
+              <section class="demo-panel" data-demo-panel="3" aria-labelledby="demo-match-title" hidden>
+                <h3 id="demo-match-title" tabindex="-1">Review matches in the app</h3>
+                <p>As the student, compare the suggested item, score, and explanation. Then use Request to Claim for the matching backpack.</p>
+                <div class="demo-report-recap"><span>Your submitted report</span><p id="demo-report-recap"></p></div>
+                <div class="demo-candidates" aria-label="Sample found items"><button class="demo-candidate" type="button" data-demo-match="backpack" aria-pressed="false"><strong>Blue backpack</strong><span>Bags · Library entrance</span><span class="demo-score">94% demo score</span><span>Explanation: same item type, blue appearance, nearby location.</span></button><button class="demo-candidate" type="button" data-demo-match="wallet" aria-pressed="false"><strong>Black wallet</strong><span>Personal items · Student Center</span><span class="demo-score">18% demo score</span><span>Explanation: different item type, color, and location.</span></button></div>
+                <p class="demo-field-note">Scores and explanations are sample values. Ownership still requires verification.</p>
+                <div class="demo-actions"><button class="button-secondary" type="button" data-demo-back>Back</button><button class="button-primary" type="button" id="demo-review-match" disabled>Request to Claim</button></div>
               </section>
-              <section class="demo-panel" data-demo-panel="2" aria-labelledby="demo-claim-title" hidden>
-                <h3 id="demo-claim-title" tabindex="-1">Check the ownership claim</h3>
-                <p>Now act as the reviewer. Matching descriptions suggest a connection; identifying evidence is the next check.</p>
-                <dl class="demo-evidence"><div><dt>Sample claimant</dt><dd>Demo Student</dd></div><div><dt>Claimant’s identifying detail</dt><dd>A silver keyring inside the front pocket.</dd></div><div><dt>Found-item detail in this scenario</dt><dd>A silver keyring is attached inside the front pocket.</dd></div></dl>
-                <form id="demo-claim-form"><label class="demo-checkbox"><input type="checkbox" id="demo-evidence-confirmed" required /><span>I compared the identifying details in this fictional case.</span></label><div class="demo-actions"><button class="button-secondary" type="button" data-demo-back>Back</button><button class="button-primary" type="submit" data-demo-submit disabled>Approve sample claim</button></div></form>
+              <section class="demo-panel" data-demo-panel="4" aria-labelledby="demo-evidence-title" hidden>
+                <h3 id="demo-evidence-title" tabindex="-1">Submit proof of ownership</h3>
+                <p>Stay in the CSPC app. Describe a unique detail, optionally attach supporting evidence, and submit the claim for administrator review.</p>
+                <form id="demo-request-form"><label for="demo-proof">Proof of Ownership</label><textarea id="demo-proof" rows="3" minlength="10" maxlength="240" required>A silver keyring is attached inside the front pocket.</textarea><label class="demo-checkbox"><input id="demo-proof-photo" type="checkbox" /><span>Include a fictional supporting photo (optional).</span></label><button class="button-primary" type="submit" data-demo-submit disabled>Submit Claim Request</button></form>
+                <details class="demo-guide-details"><summary>Claim process &amp; what to bring</summary><p>Wait for administrator review and follow the collection instructions. The app lists a valid school or government ID, a screenshot of claim approval, your Match ID, and additional identification if requested. Get Directions leads to the Supreme Student Council Office.</p></details>
+                <button class="demo-reset" type="button" id="demo-directions">Preview collection directions</button><p class="demo-field-note" id="demo-directions-note" hidden>Collection destination: Supreme Student Council Office, CSPC. In the app, Get Directions opens the map. This demo shows the destination only.</p>
               </section>
-              <section class="demo-panel" data-demo-panel="3" aria-labelledby="demo-handover-title" hidden>
-                <h3 id="demo-handover-title" tabindex="-1">Complete the handover</h3>
-                <p id="demo-handover-copy">The sample claim is approved. The item is still awaiting pickup; approval and physical return are separate steps.</p>
+              <section class="demo-panel" data-demo-panel="5" aria-labelledby="demo-admin-title" hidden>
+                <h3 id="demo-admin-title" tabindex="-1">Switch to CSPC Web staff</h3>
+                <p>The student’s claim is pending review. The administrator guide starts with a CSPC staff email, password, reCAPTCHA, and Sign In.</p>
+                <div class="demo-report-recap"><span>Role change</span><p>Student request submitted → Staff review in the management website.</p></div>
+                <button class="button-primary" type="button" id="demo-admin-signin">Simulate staff sign-in</button><p class="demo-field-note">A sample staff session is used. No credentials or reCAPTCHA are collected.</p>
+              </section>
+              <section class="demo-panel" data-demo-panel="6" aria-labelledby="demo-manage-title" hidden>
+                <h3 id="demo-manage-title" tabindex="-1">Manage the report on the web</h3>
+                <p>From the staff dashboard, open Item Management. Use status, type, and search filters, then view the submitted report before reviewing its claim.</p>
+                <dl class="demo-evidence"><div><dt>Report</dt><dd>DEMO-001 · Blue backpack · Lost</dd></div><div><dt>Sample linked match</dt><dd>DEMO-MATCH-001 · Blue backpack found near the Library</dd></div><div><dt>Claim</dt><dd>Demo Student · Pending administrator review</dd></div></dl>
+                <button class="button-primary" type="button" id="demo-manage-report">Open Claim Management</button><p class="demo-field-note">Match Management lets staff inspect the related match. Claim Management handles ownership review.</p>
+              </section>
+              <section class="demo-panel" data-demo-panel="7" aria-labelledby="demo-claim-title" hidden>
+                <h3 id="demo-claim-title" tabindex="-1">Review the student’s claim</h3>
+                <p>As staff in CSPC Web, open the claim details and verify the submitted ownership evidence before approving it.</p>
+                <dl class="demo-evidence"><div><dt>Claimant</dt><dd>Demo Student</dd></div><div><dt>Submitted evidence</dt><dd id="demo-submitted-proof"></dd></div><div><dt>Found-item detail in this scenario</dt><dd>A silver keyring is attached inside the front pocket.</dd></div><div><dt>Supporting image</dt><dd id="demo-submitted-photo"></dd></div></dl>
+                <form id="demo-claim-form"><label class="demo-checkbox"><input type="checkbox" id="demo-evidence-confirmed" required /><span>I verified that the submitted identifying detail matches this sample item.</span></label><div class="demo-actions"><button class="button-secondary" type="button" data-demo-back>Back</button><button class="button-primary" type="submit" data-demo-submit disabled>Approve sample claim</button></div></form>
+              </section>
+              <section class="demo-panel" data-demo-panel="8" aria-labelledby="demo-handover-title" hidden>
+                <h3 id="demo-handover-title" tabindex="-1">Record collection at the SSC Office</h3>
+                <p id="demo-handover-copy">The student can follow the collection instructions after approval. Staff confirm the physical handover in CSPC Web.</p>
                 <dl class="demo-evidence"><div><dt>Lost report</dt><dd id="demo-lost-state">Active</dd></div><div><dt>Found item</dt><dd id="demo-found-state">Awaiting pickup</dd></div><div><dt>Claim</dt><dd id="demo-claim-state">Approved</dd></div></dl>
-                <button class="button-primary" type="button" id="demo-handover">Confirm sample handover</button>
-                <p class="demo-field-note" id="demo-handover-note">The screenshot is the original claim-review preview. The handover state is demonstrated by these controls.</p>
-                <button class="demo-reset" type="button" data-demo-back>Back to claim review</button>
+                <button class="button-primary" type="button" id="demo-handover">Confirm sample handover</button><p class="demo-field-note">Approval and completed collection are separate states. The static preview is a reference; these controls simulate the handover.</p><button class="demo-reset" type="button" data-demo-back>Back to claim review</button>
               </section>
               <p class="demo-feedback" id="demo-feedback" role="status" aria-live="polite" aria-atomic="true"></p>
             </div>
           </div>
           <div class="demo-takeaway"><span class="stack-label">Why this flow matters</span><p>A report creates a record. Matching narrows the search. Evidence supports an ownership decision. A handover closes the case. Keeping those steps distinct makes the process easier to understand and review.</p></div>
-          <noscript><p class="demo-intro">Enable JavaScript to try the interactive scenario. The admin preview above remains available to view.</p></noscript>
+          <noscript><p class="demo-intro">Enable JavaScript to try the interactive scenario. The app sign-in preview above remains available to view.</p></noscript>
         </div>
         <section class="screen-tour" id="screen-tour" aria-labelledby="screen-tour-title">
           <div class="screen-tour-heading"><p class="eyebrow">/ The complete walkthroughs</p><h3 id="screen-tour-title">Explore every screen.</h3><p>Browse the full web and app walkthroughs, including sign-in, records, claims, settings, and support. These are static previews with sample data; use the interactive case above to try the report-to-return flow.</p></div>
@@ -365,7 +411,7 @@
     <footer class="site-footer"><a class="wordmark" href="#top">SC<span class="wordmark-dot">.</span></a><p>© <span id="year"></span> Sean Matthew Capistrano</p><div class="footer-links"><a href="https://github.com/secapistrano-rgb" target="_blank" rel="noreferrer">GitHub</a><a href="https://www.linkedin.com/in/sean-matthew-capistrano-2787b2410/" target="_blank" rel="noreferrer">LinkedIn</a></div></footer>
     <button class="back-to-top" type="button" aria-label="Back to top" hidden>Top</button>
     <script src="/script.js"></script>
-    <script type="module" src="/walkthrough.js?v=3"></script>
-    <script type="module" src="/walkthrough-gallery.js?v=4"></script>
+    <script type="module" src="/walkthrough.js?v=6"></script>
+    <script type="module" src="/walkthrough-gallery.js?v=5"></script>
   </body>
 </html>

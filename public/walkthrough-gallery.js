@@ -1,4 +1,4 @@
-import { walkthroughCatalog } from './walkthrough-catalog.js?v=4';
+import { walkthroughCatalog } from './walkthrough-catalog.js?v=5';
 
 const root = document.querySelector('#screen-tour');
 if (root) {

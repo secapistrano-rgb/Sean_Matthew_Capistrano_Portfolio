@@ -185,7 +185,7 @@ h1 { font-size: clamp(42px, 4.9vw, 68px); margin-bottom: 24px; }
 .demo-shell[data-view="app"] .demo-preview a { max-width: 280px; margin-inline: auto; }
 .demo-shell[data-view="app"] .demo-preview img { display: block; max-height: none; object-fit: contain; }
 .demo-shell[data-view="app"] .demo-preview figcaption { text-align: center; }
-.demo-steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); list-style: none; margin: 0; padding: 0 26px 24px; gap: 10px; }
+.demo-steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); list-style: none; margin: 0; padding: 0 26px 24px; gap: 10px; }
 .demo-steps button { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 13px 8px; border: 1px solid var(--line); border-radius: 6px; background: var(--bg); color: var(--muted); font-size: 12px; }
 .demo-steps button > span { font-family: var(--mono); font-size: 9px; }
 .demo-steps button[aria-current] { color: var(--accent-ink); background: var(--accent); border-color: var(--accent); }
@@ -198,6 +198,19 @@ h1 { font-size: clamp(42px, 4.9vw, 68px); margin-bottom: 24px; }
 .demo-preview figcaption { padding-top: 16px; font-size: 11px; line-height: 1.8; color: var(--muted); }
 .demo-preview figcaption strong, .demo-preview figcaption span { display: block; }
 .demo-preview figcaption strong { color: var(--ink); font-weight: 500; }
+.demo-preview > [hidden] { display: none; }
+.demo-case-preview { padding: clamp(16px, 3vw, 28px); background: var(--surface); border: 1px solid var(--line); border-radius: 8px; }
+.demo-case-workspace { font: 10px var(--mono); color: var(--accent); margin-bottom: 18px; }
+.demo-case-preview h4 { font-size: 24px; letter-spacing: -.04em; margin: 0 0 8px; }
+.demo-case-help { font: 10px var(--mono); color: var(--muted); }
+.demo-case-item { display: flex; align-items: center; gap: 14px; padding: 20px 0; border-block: 1px solid var(--line); margin: 20px 0; }
+.demo-case-item img { width: 64px; height: 64px; flex-shrink: 0; border-radius: 8px; }
+.demo-case-item > div { min-width: 0; }
+.demo-case-item strong { display: block; font-size: 17px; }
+.demo-case-item span { display: block; font-size: 11px; color: var(--muted); overflow-wrap: anywhere; margin-top: 5px; }
+.demo-case-status { font: 11px var(--mono); color: var(--ink); padding: 12px; border: 1px solid var(--line); border-radius: 6px; }
+.demo-case-status[data-state="approved"], .demo-case-status[data-state="resolved"] { border-color: var(--accent); color: var(--accent); }
+.demo-case-preview dd { overflow-wrap: anywhere; }
 .demo-interaction { padding: 25px; min-width: 0; }
 .demo-case-meta { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 22px; font-family: var(--mono); font-size: 9px; color: var(--muted); }
 .demo-status { color: var(--accent); background: var(--bg); border: 1px solid var(--line); border-radius: 20px; padding: 4px 9px; }
@@ -206,6 +219,13 @@ h1 { font-size: clamp(42px, 4.9vw, 68px); margin-bottom: 24px; }
 .demo-panel h3:focus { outline: none; }
 .demo-panel > p { color: var(--muted); font-size: 13px; }
 .demo-panel label:not(.demo-checkbox) { display: block; color: var(--ink); font-size: 12px; margin: 15px 0 7px; }
+.demo-field-label { display: block; color: var(--ink); font-size: 12px; margin-top: 15px; }
+.demo-guide-details { border-top: 1px solid var(--line); padding: 16px 0; margin-top: 18px; color: var(--muted); font-size: 12px; }
+.demo-guide-details summary { cursor: pointer; color: var(--accent); }
+.demo-guide-details p { margin: 12px 0 0; }
+.demo-dashboard-items { padding-left: 18px; color: var(--muted); font-size: 13px; margin: 20px 0; }
+.demo-dashboard-items li { margin-bottom: 10px; }
+.demo-actions button[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); }
 .demo-panel input:not([type="checkbox"]), .demo-panel textarea, .demo-panel select { width: 100%; min-width: 0; font: inherit; font-size: 13px; color: var(--ink); background: var(--bg); border: 1px solid var(--line); border-radius: 6px; padding: 11px 12px; }
 .demo-panel textarea { resize: vertical; min-height: 100px; }
 .demo-panel input[readonly] { color: var(--muted); }

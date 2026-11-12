@@ -32,3 +32,17 @@ Mobile source: https://github.com/secapistrano-rgb/lost-and-found-app-cspc
 `all/app/` contains all twelve PNGs from `docs/app-walkthrough/images`, preserving their original filenames. These cover sign-in, home, reporting, item details, matches, ownership evidence, claims, notifications, profile, settings, feedback, and support.
 
 Titles and explanatory captions in `public/walkthrough-catalog.js` are adapted from the corresponding walkthrough README sections. The same fictional-data and browser-preview limitations described above apply. Navigation changes reference screens only; it does not operate the underlying applications.
+
+## User’s Guide sequence
+
+The interactive sample case follows Appendix F, “User’s Guide,” in the user-provided `FOD-FINAL-DESTINATION-HEHE.pdf`: printed pages 212–233 (PDF pages 228–249). The student report/match/claim path appears on printed pages 212–217; staff authentication, dashboard, item management, and claim management appear on pages 223–227. The complete guide also describes account-menu and additional management modules represented in the full screen browser where previews are available.
+
+The core demo keeps match review and proof-of-ownership submission in the student app before switching to administrator review on the website. Sample photo selection, image analysis, campus-account sign-in, reCAPTCHA, and location detection are simulated. The collection destination is the Supreme Student Council Office. The “What to Bring” list is corroborated by the app’s `ClaimItemScreen.js`: valid ID, claim-approval screenshot, Match ID, and additional identification if requested.
+
+The final handover transition additionally follows `ClaimController.php`, distinguishing approval from resolved/claimed/returned states. The PDF itself is not published with the portfolio.
+
+## Backpack claim preview
+
+The current `05-claims.png` from the web walkthrough’s isolated `fixtures/claims.php` shows the blue backpack approved and awaiting pickup, with the wallet pending review. The separate wallet-approved example is excluded from the portfolio.
+
+During interactive claim review and collection, the portfolio renders its own sample backpack record instead of a static screenshot. Its pending, approved, and resolved statuses follow the demo state. `case/backpack.svg` is copied from `docs/walkthrough/assets/backpack.svg` for that record. The full screen browser retains the original web screenshot as an explicitly described reference.

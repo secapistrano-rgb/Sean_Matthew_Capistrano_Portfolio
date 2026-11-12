@@ -33,8 +33,8 @@ export const walkthroughCatalog = {
     {
       "file": "05-claims.png",
       "title": "Review ownership claims",
-      "description": "Open Claim Management. Review the claimant, linked items, supporting information, and claim status before taking an available action.",
-      "image": "/assets/walkthrough/all/web/05-claims.png?v=7f47d47b"
+      "description": "Review the claimant, linked items, evidence, and status in Claim Management. In this reference screenshot, the blue backpack is approved and awaiting pickup; the black wallet is pending review. The interactive backpack case above updates its own status as you approve and complete collection.",
+      "image": "/assets/walkthrough/all/web/05-claims.png?v=d5eea728"
     },
     {
       "file": "06-reports.png",

@@ -12,8 +12,8 @@ Built with HTML, CSS, vanilla JavaScript, and an Express server.
 - An animated hanging ID card with cursor-follow effects.
 - A continuously scrolling technology marquee.
 - Project detail dialogs with features, contributions, timelines, and technology logos.
-- A sample-data Lost & Found walkthrough: submit a report, compare matches, review ownership evidence, and confirm a handover.
-- Switch between Web admin and Mobile app previews without losing walkthrough progress. The mobile project’s walkthrough link opens its app view directly.
+- A nine-step sample-data Lost & Found walkthrough following Appendix F of the project’s User’s Guide: student sign-in, dashboard, reporting, matches, ownership evidence, staff sign-in, item management, claim review, and collection.
+- Reporting simulates photo selection and location detection, with editable descriptions and a report date. Students submit ownership evidence in the app before staff review it on CSPC Web. The complete screen browser also provides separate web and app galleries.
 - A complete screen browser with 11 web previews (including the item quick-preview) and all 12 app previews, captions, direct screen selection, and previous/next navigation.
 - “Behind the build” stories for each project, covering an engineering challenge, its solution, and a lesson.
 - Education, certifications, work experience, and technical skills.
