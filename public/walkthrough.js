@@ -1,4 +1,4 @@
-import { walkthroughCatalog } from './walkthrough-catalog.js?v=5';
+import { walkthroughCatalog } from './walkthrough-catalog.js?v=6';
 
 // Appendix F guide sequence, simulated in memory with fictional records.
 export function createWalkthrough() {

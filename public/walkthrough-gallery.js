@@ -1,4 +1,4 @@
-import { walkthroughCatalog } from './walkthrough-catalog.js?v=5';
+import { walkthroughCatalog } from './walkthrough-catalog.js?v=6';
 
 const root = document.querySelector('#screen-tour');
 if (root) {
@@ -34,7 +34,7 @@ if (root) {
     find('#tour-title').textContent = screen.title;
     find('#tour-description').textContent = screen.description;
     find('#tour-note').textContent = project === 'web'
-      ? 'Web previews use fictional data and a simulated admin session. Available actions depend on the signed-in role. Email, notifications, and activity logs are outside the supplied walkthrough.'
+      ? 'Web previews use fictional data and a simulated admin session. Available actions depend on the signed-in role. Notifications and activity logs are outside the supplied walkthrough.'
       : 'App previews render React Native screens through a browser adapter with fictional records and mocked services. They are not native Android or iOS screenshots; platform controls and layout may differ.';
   }
 

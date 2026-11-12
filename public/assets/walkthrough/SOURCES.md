@@ -27,7 +27,7 @@ Mobile source: https://github.com/secapistrano-rgb/lost-and-found-app-cspc
 
 ## Complete screen browser
 
-`all/web/` contains eleven PNGs from `docs/walkthrough/images`, preserving their original filenames. These cover the ten documented web steps plus the item quick-preview. The mobile-layout variant is excluded.
+`all/web/` contains twelve PNGs from `docs/walkthrough/images`, preserving their original filenames. These cover the eleven documented web steps plus the item quick-preview. The mobile-layout variant is excluded.
 
 `all/app/` contains all twelve PNGs from `docs/app-walkthrough/images`, preserving their original filenames. These cover sign-in, home, reporting, item details, matches, ownership evidence, claims, notifications, profile, settings, feedback, and support.
 
@@ -46,3 +46,7 @@ The final handover transition additionally follows `ClaimController.php`, distin
 The current `05-claims.png` from the web walkthrough’s isolated `fixtures/claims.php` shows the blue backpack approved and awaiting pickup, with the wallet pending review. The separate wallet-approved example is excluded from the portfolio.
 
 During interactive claim review and collection, the portfolio renders its own sample backpack record instead of a static screenshot. Its pending, approved, and resolved statuses follow the demo state. `case/backpack.svg` is copied from `docs/walkthrough/assets/backpack.svg` for that record. The full screen browser retains the original web screenshot as an explicitly described reference.
+
+## Consistent dashboard sidebar
+
+The Item, Claim, Match, Email, Reports, Users, Roles, Feedback, and Help & Support previews were rendered again from their PHP views using isolated fictional records after restoring the original dashboard sidebar in `app/Views/layout/main.php` and `public/assets/css/management.css`. The background image, 280px width, 70px logo, Management System heading, link styles, and user footer match Dashboard. The dashboard reference image remains unchanged.

@@ -16,55 +16,61 @@ export const walkthroughCatalog = {
       "file": "03-items.png",
       "title": "Manage lost and found items",
       "description": "Review counts for the current page. Search across all reports by title, description, category, location, or reporter; combine category, type, and status filters. Select Preview to inspect photos and report details, use the gallery controls for additional photos, and press Escape to return to the list. Open full details leads to the complete record. The demo records and illustrations are fictional.",
-      "image": "/assets/walkthrough/all/web/03-items.png?v=df1e15f3"
+      "image": "/assets/walkthrough/all/web/03-items.png?v=b876bb99"
     },
     {
       "file": "03-items-preview.png",
       "title": "Manage lost and found items — quick preview",
       "description": "Review counts for the current page. Search across all reports by title, description, category, location, or reporter; combine category, type, and status filters. Select Preview to inspect photos and report details, use the gallery controls for additional photos, and press Escape to return to the list. Open full details leads to the complete record. The demo records and illustrations are fictional.",
-      "image": "/assets/walkthrough/all/web/03-items-preview.png?v=b5935ccc"
+      "image": "/assets/walkthrough/all/web/03-items-preview.png?v=d5766999"
     },
     {
       "file": "04-matches.png",
       "title": "Review potential matches",
       "description": "Open Match Management. Compare lost and found item descriptions, locations, and the match score. Open a match to review it before approving, rejecting, or resolving the case. A score is a review aid, not proof of ownership.",
-      "image": "/assets/walkthrough/all/web/04-matches.png?v=ea1ed4a8"
+      "image": "/assets/walkthrough/all/web/04-matches.png?v=fabc6fd3"
     },
     {
       "file": "05-claims.png",
       "title": "Review ownership claims",
       "description": "Review the claimant, linked items, evidence, and status in Claim Management. In this reference screenshot, the blue backpack is approved and awaiting pickup; the black wallet is pending review. The interactive backpack case above updates its own status as you approve and complete collection.",
-      "image": "/assets/walkthrough/all/web/05-claims.png?v=d5eea728"
+      "image": "/assets/walkthrough/all/web/05-claims.png?v=4f5785f7"
+    },
+    {
+      "file": "11-emails.png",
+      "title": "Review email logs",
+      "description": "Open Email Management to review total, sent, failed, and pending notifications. Search the logs, filter by delivery status, and view a notification’s details.",
+      "image": "/assets/walkthrough/all/web/11-emails.png?v=c1e576ca"
     },
     {
       "file": "06-reports.png",
       "title": "Review reports and analytics",
       "description": "Open Reports & Analytics. Inspect item totals, claim success, average claim time, and category breakdowns. Use the filters and export controls to prepare a report.",
-      "image": "/assets/walkthrough/all/web/06-reports.png?v=6e8cfc5a"
+      "image": "/assets/walkthrough/all/web/06-reports.png?v=ba7b8200"
     },
     {
       "file": "07-users.png",
       "title": "Manage users",
       "description": "Open User Management. Search by name or email and filter by department or status. Review account status, two-factor authentication, and report counts, then use the view, edit, suspend, or delete controls for an account.",
-      "image": "/assets/walkthrough/all/web/07-users.png?v=b71e45c0"
+      "image": "/assets/walkthrough/all/web/07-users.png?v=b34409a1"
     },
     {
       "file": "08-admin_role.png",
       "title": "Manage roles",
       "description": "Open Role Management. Search the administrative accounts and filter by role. Review the super admin, admin, and staff assignments. Open an account to inspect or edit it; the super admin can use Add New Role to create an administrative account. Available controls depend on the signed-in role.",
-      "image": "/assets/walkthrough/all/web/08-admin_role.png?v=2c711ac6"
+      "image": "/assets/walkthrough/all/web/08-admin_role.png?v=fa0ae338"
     },
     {
       "file": "09-feedback.png",
       "title": "Manage feedback",
       "description": "Open Feedback Management. Check total feedback, pending entries, addressed entries, and average rating. Filter by status, type, or rating, or search the list. Open an entry to read its details or use Respond to reply.",
-      "image": "/assets/walkthrough/all/web/09-feedback.png?v=61d503c9"
+      "image": "/assets/walkthrough/all/web/09-feedback.png?v=651a047b"
     },
     {
       "file": "10-help-support.png",
       "title": "Manage help & support",
       "description": "Open Help & Support. Review total, open, and in-progress tickets, then check the recent requests. Select View All Tickets to open ticket management, where staff can inspect a request, reply, and update its status.",
-      "image": "/assets/walkthrough/all/web/10-help-support.png?v=ec9ab3d6"
+      "image": "/assets/walkthrough/all/web/10-help-support.png?v=d304738e"
     }
   ],
   "app": [
